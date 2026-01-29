@@ -18,7 +18,14 @@ const Footer = () => {
 
   const openExternalUrl = (url: string) => {
     if (typeof window !== "undefined") {
-      window.parent.postMessage({ type: "OPEN_EXTERNAL_URL", data: { url } }, "*");
+      // Try to post message to parent (for Orchids editor)
+      try {
+        window.parent.postMessage({ type: "OPEN_EXTERNAL_URL", data: { url } }, "*");
+      } catch (e) {
+        // Ignore if no parent window
+      }
+      // Always open URL in new tab as fallback
+      window.open(url, "_blank", "noopener,noreferrer");
     }
   };
 
