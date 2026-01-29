@@ -18,7 +18,7 @@ interface User {
 interface AuthContextData {
     user: User | null;
     loading: boolean;
-    login: (email: string, password: string) => Promise<void>;
+    login: (email: string, password: string) => Promise<User>;
     logout: () => void;
 }
 
@@ -184,15 +184,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 email: payload.email || userData.email,
                 role: role,
                 name: userData.name || undefined,
+                spreadValue: userData.spreadValue,
             };
 
             setUser(newUser);
-
-            const dashboardPath = role === "ADMIN" ? "/admin/dashboard" : "/customer/dashboard";
-
-            if (typeof window !== 'undefined') {
-                window.location.href = dashboardPath;
-            }
+            return newUser;
         } catch (error) {
             console.error("Erro no login:", error);
             

@@ -52,7 +52,7 @@ function LoginPageInner(): React.JSX.Element {
     const router = useRouter();
     const sp = useSearchParams();
     const next = safeNext(sp ? sp.get('next') : undefined);
-    const { login } = useAuth();
+    const { login, user } = useAuth();
 
     const {
         register,
@@ -67,9 +67,16 @@ function LoginPageInner(): React.JSX.Element {
 
     const onSubmit: SubmitHandler<LoginForm> = async (values) => {
         try {
-            await login(values.email, values.password);
+            const loggedInUser = await login(values.email, values.password);
             toast.success('Bem-vindo de volta!');
-            router.replace(next);
+
+            // Redirect based on role if no 'next' parameter
+            if (sp && sp.get('next')) {
+                router.replace(next);
+            } else {
+                const dashboardPath = loggedInUser.role === "ADMIN" ? "/admin/dashboard" : "/customer/dashboard";
+                router.replace(dashboardPath);
+            }
         } catch (error) {
             const message = error instanceof Error ? error.message : 'Falha no login';
             toast.error(message);
