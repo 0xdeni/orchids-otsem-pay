@@ -128,7 +128,7 @@ const Footer = () => {
             </div>
           </div>
 
-        <div className="mt-12 sm:mt-16 flex flex-col items-center justify-between gap-3 border-t border-foreground/[0.05] pt-6 sm:pt-8 sm:flex-row">
+        <div className="mt-10 sm:mt-12 flex flex-col items-center justify-between gap-3 border-t border-foreground/[0.05] pt-5 sm:pt-6 sm:flex-row">
           <p className="text-[11px] sm:text-[12px] font-medium text-slate-400">
             © 2026 Otsem Pay. Todos os direitos reservados.{" "}
             <button
