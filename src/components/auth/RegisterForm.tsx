@@ -391,7 +391,7 @@ function RegisterPageInner(): React.JSX.Element {
                                             Aceito os{" "}
                                             <a
                                                 className="font-bold text-primary hover:underline"
-                                                href="/termos"
+                                                href="https://drive.google.com/file/d/1w5iM6U1BRHhKemNVXcKiEc1TJ1YjqFCu/view?usp=share_link"
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
@@ -400,7 +400,7 @@ function RegisterPageInner(): React.JSX.Element {
                                             e a{" "}
                                             <a
                                                 className="font-bold text-primary hover:underline"
-                                                href="/privacidade"
+                                                href="https://drive.google.com/file/d/1X0RHbjkm9uG9k_v7wqBIKMVWkbKI8Qcv/view?usp=share_link"
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
