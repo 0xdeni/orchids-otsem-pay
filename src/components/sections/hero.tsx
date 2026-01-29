@@ -244,7 +244,7 @@ const HeroSection = () => {
         {/* Right side - Exchange Widget */}
         <div className="w-full lg:w-[50%] relative flex items-center justify-center">
           {/* Static floating badges - no continuous animations */}
-          <div className="absolute -top-8 sm:-top-6 -left-4 sm:-left-8 z-30 ios-card-elevated hidden sm:block">
+          <div className="absolute -top-8 sm:-top-6 -left-8 sm:-left-16 z-30 ios-card-elevated hidden sm:block">
             <div className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-xl bg-yellow-50 flex items-center justify-center text-yellow-600 border border-yellow-100">
                 <Zap className="w-4.5 h-4.5" />
