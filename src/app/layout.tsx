@@ -21,6 +21,7 @@ import type { ReactNode } from "react";
 
 import { ConnectionStatus } from "@/components/connection-status";
 import { validateEnv } from "@/lib/env";
+import { CookieConsent } from "@/components/CookieConsent";
 
 export default function RootLayout({
   children,
@@ -60,6 +61,7 @@ export default function RootLayout({
                 <Toaster position="top-right" richColors />
                 <Analytics />
             </AuthProvider>
+            <CookieConsent />
         </ThemeProvider>
         <VisualEditsMessenger />
       </body>
